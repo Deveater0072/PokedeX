@@ -1,6 +1,6 @@
 const Favorites = function () {
     return <>
-        <div>DUpa</div>
+        <div>Hello</div>
     </>;
 };
 
