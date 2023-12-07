@@ -9,12 +9,14 @@ import NoPage from "./pages/NoPage";
 import Arena from "./pages/Arena";
 import Registration from "./pages/Registration";
 import Logout from "./pages/Logout";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="Home" element={<Home />} />
           <Route path="Arena" element={<Arena />} />
           <Route path="Favorites" element={<Favorites />} />
           <Route path="Login" element={<Login />} />
@@ -31,3 +33,5 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 
 export default App;
+
+

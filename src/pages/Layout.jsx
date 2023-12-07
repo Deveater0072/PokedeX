@@ -5,29 +5,34 @@ const Layout = () => {
     <>
       <nav>
         <ul>
+        <li>
+            <Link to="/Home">
+              <Button variant="contained">Home</Button>
+            </Link>
+          </li>
           <li>
             <Link to="/Favorites">
-              <Button>Favorites</Button>
+              <Button variant="contained">Favorites</Button>
             </Link>
           </li>
           <li>
             <Link to="/Arena">
-              <Button>Arena</Button>
+              <Button variant="contained">Arena</Button>
             </Link>
           </li>
           <li>
             <Link to="/Login">
-              <Button>Login</Button>
+              <Button variant="contained">Login</Button>
             </Link>
           </li>
           <li>
             <Link to="/Registration">
-              <Button>Registration</Button>
+              <Button variant="contained">Registration</Button>
             </Link>
           </li>
           <li>
             <Link to="/Logout">
-              <Button>Logout</Button>
+              <Button variant="contained">Logout</Button>
             </Link>
           </li>
         </ul>
