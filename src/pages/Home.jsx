@@ -1,7 +1,10 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
+// import Pagination from "@mui/material/Pagination";
+// import Stack from "@mui/material/Stack";
+import Pokemons from "../data/data";
+import PokemonCard from "../components/Card";
+
 const Home = () => {
   return (
     <>
@@ -14,15 +17,21 @@ const Home = () => {
         autoComplete="off"
       >
         <TextField id="outlined-basic" label="Pokemon Name" variant="filled" />
+        {Pokemons.map((pokemon) => (
+          <PokemonCard pokemon={pokemon} />
+        ))}
       </Box>
-      <Stack spacing={2}>
-        <Pagination count={2} shape="rounded" />
-      </Stack>
     </>
   );
 };
 
-
-
 export default Home;
 
+{
+  /* {Pokemons.map((item) => (
+          <div key={item.name}>
+            {item.name}, {item.id}, {item.height}, {item.baseExperience},
+            {item.weight}, {item.ability}
+          </div>
+        ))} */
+}

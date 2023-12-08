@@ -17,4 +17,5 @@ let Pokemons = [
   },
 ];
 
+
 export default Pokemons
