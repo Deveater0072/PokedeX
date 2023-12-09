@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 // import Pagination from "@mui/material/Pagination";
 // import Stack from "@mui/material/Stack";
 import Pokemons from "../data/data";
-import PokemonCard from "../components/Card";
+import PokemonCard from "../components/PokemonCard";
 
 const Home = () => {
   return (
@@ -27,11 +27,4 @@ const Home = () => {
 
 export default Home;
 
-{
-  /* {Pokemons.map((item) => (
-          <div key={item.name}>
-            {item.name}, {item.id}, {item.height}, {item.baseExperience},
-            {item.weight}, {item.ability}
-          </div>
-        ))} */
-}
+
