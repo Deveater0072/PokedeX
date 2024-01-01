@@ -9,7 +9,7 @@ import NoPage from "./pages/NoPage";
 import Arena from "./pages/Arena";
 import Registration from "./pages/Registration";
 import Logout from "./pages/Logout";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
@@ -33,5 +33,3 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 
 export default App;
-
-

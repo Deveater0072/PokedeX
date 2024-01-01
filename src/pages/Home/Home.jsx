@@ -1,27 +1,33 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Pokemons from "../data/data";
-import PokemonCard from "../components/PokemonCard";
-import { useState } from "react";
+import Pokemons from "../../data/data";
+import PokemonCard from "../../components/pokemonCard/PokemonCard";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Stack } from "@mui/material";
+import classes from "./Home.module.css";
 
 const Home = () => {
-  const [pokemons, setPokemons] = useState(Pokemons);
+  const [pokemons, setPokemons] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const [maxPageNumber, setMaxPageNumber] = useState(1);
+  useEffect(() => {
+    getPokemonByName(document.getElementById("pokemon-text-search").value);
+  }, [pageNumber]);
   const getPokemonByName = async (name) => {
     try {
       const response = await axios.get(
-        `https://rickandmortyapi.com/api/character?name=${name}`
+        `https://rickandmortyapi.com/api/character?name=${name}&page=${pageNumber}`
       );
       const data = response.data.results;
+      setMaxPageNumber(response.data.info.pages);
+      console.log(response.data.info);
       setPokemons(data);
-      console.log(data);
     } catch (err) {
+      setPokemons([]);
       console.log(err);
     }
   };
-
   const onChangeHandler = (event) => {
     getPokemonByName(event.target.value);
     console.log(event.target.value);
@@ -53,8 +59,9 @@ const Home = () => {
         noValidate
         autoComplete="off"
       >
+        {maxPageNumber}
         <TextField
-          id="outlined-basic"
+          id="pokemon-text-search"
           label="Pokemon Name"
           variant="filled"
           onChange={onChangeHandler}
@@ -68,12 +75,21 @@ const Home = () => {
         </Button>
         {pageNumber}
         <Button
+          disabled={pageNumber >= maxPageNumber}
           variant="contained"
           onClick={() => setPageNumber(pageNumber + 1)}
         >
           &gt;{" "}
         </Button>
-        <Stack direction={"row"} spacing={2}>
+
+        <Stack
+          justifyContent={"center"}
+          alignContent={"center"}
+          className={classes.pokemonContainer}
+          direction={"row"}
+          flexWrap={"wrap"}
+          style={{ width: "100%", margin: "auto" }}
+        >
           {pokemons.map((pokemon) => (
             <PokemonCard key={pokemon.id} pokemon={pokemon} />
           ))}

@@ -1,11 +1,12 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import TextWithLabel from "./TextWithLabel";
+import TextWithLabel from "../TextWithLabel";
 import { Stack } from "@mui/material";
+import styles from "./PokemonCard.module.css";
 
 const PokemonCard = (props) => {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card className={styles.pokemonCard} sx={{ minWidth: 275 }}>
       <CardContent>
         <TextWithLabel label="Name" text={props.pokemon.name} />
         <TextWithLabel label="Id" text={props.pokemon.id} />
