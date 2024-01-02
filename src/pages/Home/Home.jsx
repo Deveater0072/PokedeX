@@ -33,21 +33,8 @@ const Home = () => {
     console.log(event.target.value);
   };
   const onChangePageMinus = () => {
-    // const newPageNumber = pageNumber - 1;
-    // if (newPageNumber > 0) {
-    //   setPageNumber(newPageNumber);
-    // } else {
-    //   setPageNumber(1);
-
-    // }
     setPageNumber(Math.max(pageNumber - 1, 1));
   };
-
-  // alternatywa do skroconej wersji linijka 62
-
-  // const onChangePagePlus = () => {
-  //   setPageNumber(pageNumber + 1);
-  // };
 
   return (
     <>
