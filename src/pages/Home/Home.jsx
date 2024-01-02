@@ -59,7 +59,6 @@ const Home = () => {
         noValidate
         autoComplete="off"
       >
-        {maxPageNumber}
         <TextField
           id="pokemon-text-search"
           label="Pokemon Name"
@@ -73,7 +72,7 @@ const Home = () => {
         >
           &lt;
         </Button>
-        {pageNumber}
+        {pageNumber} z {maxPageNumber}
         <Button
           disabled={pageNumber >= maxPageNumber}
           variant="contained"
@@ -81,7 +80,6 @@ const Home = () => {
         >
           &gt;{" "}
         </Button>
-
         <Stack
           justifyContent={"center"}
           alignContent={"center"}
