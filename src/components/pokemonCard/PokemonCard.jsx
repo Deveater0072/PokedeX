@@ -10,8 +10,6 @@ const PokemonCard = (props) => {
       <CardContent>
         <TextWithLabel label="Name" text={props.pokemon.name} />
         <TextWithLabel label="Id" text={props.pokemon.id} />
-        {/* <TextWithLabel label="URL" text={props.pokemon.image} /> */}
-        <img src={props.pokemon.image} />
         <TextWithLabel
           label="Base Experience"
           text={props.pokemon.baseExperience}
